@@ -40,6 +40,8 @@ else
 fi
 
 # functions
+
+# for checksumming multiple files at once
 function md5sum2 {
     for i in "$*"; do
         # echo -e "\n `md5sum $i`" &
@@ -55,6 +57,7 @@ function sha1sum2 {
     cat
 }
 
+# for running multiple types of checksums at once on one file
 function allsum {
     md5sum "$*" &
     sha1sum "$*" &
@@ -63,6 +66,7 @@ function allsum {
     cat
 }
 
+# extend "where" functionality, I find myself running "la `where <program>`" too often
 function about {
     if where $* 1>/dev/null; then
         la `where $*`
@@ -72,8 +76,11 @@ function about {
 }
 
 function seqget {
-    # usage: seqget URL START END
-    # URL must have a %% in it to be replaced with number
+    if [ -z "$*" ]; then
+        echo "Usage: seqget URL START END"
+        echo "URL must have a %% in it to be replaced with number"
+        return
+    fi
 
     for i in `seq $2 $3`; do
         tmpURL=$1
@@ -81,6 +88,7 @@ function seqget {
     done
 }
 
+# interact with the clipboard from the command-line. got from StackOverflow somewhere
 function clipboard {
     if command -v xclip 1>/dev/null; then
         if [[ -p /dev/stdin ]] ; then
@@ -99,6 +107,9 @@ function clipboard {
 alias cb=clipboard
 
 function ytget {
-    # usage: ytget YouTubeID
+    if [ -z "$*" ]; then
+        echo "Usage: ytget YouTubeID"
+        return
+    fi
     wget "https://i.ytimg.com/vi/$*/maxresdefault.jpg" -O "$*_maxresdefault.jpg" || wget "https://i.ytimg.com/vi/$*/hqdefault.jpg" -O "$*_hqdefault.jpg"
 }
