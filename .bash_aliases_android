@@ -1,0 +1,6 @@
+alias walkmanpc='ssh walkman@WalkmanLM17.local'
+alias pi='ssh pi@WalkmanPi.local'
+alias mcpc='walkmanpc'
+
+# have yet to re-set up termux again, I know this needs to be modified
+alias aptupdate='apt update && apt upgrade -y; apt dist-upgrade -y; apt install -y; apt install -f -y; apt check -y; apt autoremove -y; apt autoclean'

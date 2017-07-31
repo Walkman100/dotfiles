@@ -1,0 +1,8 @@
+alias walkmanpc='ssh walkman@WalkmanLM17.local'
+alias apti='sudo apt-get install'
+
+alias sshchat='ssh Walkman@localhost -p 3000'
+alias cdweb='cd /var/www/walkman'
+#alias hyperget='aria2c -j 10 -x 10 -k 1M -s 10 -c'
+alias gitsy='bash /home/pi/.apps/gitsy/gitsy.sh'
+alias pioff='sudo shutdown -HP now'
