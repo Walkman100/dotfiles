@@ -1,0 +1,16 @@
+[user]
+	name = ░▒▓█│【Walkman】│█▓▒░
+	email = matthewcarter17@gmail.com
+	signingkey = 31154DF8
+[branch]
+	autosetuprebase = always
+[push]
+	default = simple
+[gpg]
+	program = /usr/bin/gpg
+[filter "lfs"]
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
+	required = true
+[pull]
+	rebase = true
