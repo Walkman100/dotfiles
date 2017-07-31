@@ -25,23 +25,9 @@ alias delempty='find . -type d -empty -print -delete'
 alias findq='find 2>/dev/null'
 alias hyperget='aria2c -s 999 -j 999 -x 16 -k 1M'
 
-# device-specific aliases
-if [[ $(uname -o) = Android ]]; then
-    . .bash_aliases_android
-else
-    case $HOSTNAME in
-        WalkmanLM17)
-            . .bash_aliases_walkmanlm17
-            ;;
-        WalkmanPI)
-            . .bash_aliases_walkmanpi
-            ;;
-        Richards-MacBook.local)
-            . .bash_aliases_macbook
-    esac
-fi
-
-# functions
+#############
+# Functions #
+#############
 
 # for checksumming multiple files at once
 function md5sum2 {
@@ -124,8 +110,27 @@ function holdkey {
         echo "Use Ctrl-C to stop"
         return
     fi
+    
     winid=$(xdotool search --name "$2" | head -n1)
     while true; do
         xdotool keydown --window $winid "$1"
     done
 }
+
+###########################
+# device-specific aliases #
+###########################
+if [[ $(uname -o) = Android ]]; then
+    . .bash_aliases_android
+else
+    case $HOSTNAME in
+        WalkmanLM17)
+            . .bash_aliases_walkmanlm17
+            ;;
+        WalkmanPI)
+            . .bash_aliases_walkmanpi
+            ;;
+        Richards-MacBook.local)
+            . .bash_aliases_macbook
+    esac
+fi
