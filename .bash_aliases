@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # add colours to commands
 alias egrep='egrep --colour=auto'
 alias fgrep='fgrep --colour=auto'
@@ -112,4 +114,17 @@ function ytget {
         return
     fi
     wget "https://i.ytimg.com/vi/$*/maxresdefault.jpg" -O "$*_maxresdefault.jpg" || wget "https://i.ytimg.com/vi/$*/hqdefault.jpg" -O "$*_hqdefault.jpg"
+}
+
+function holdkey {
+    if [ -z "$*" ]; then
+        echo "Usage: holdkey KEY \"Window name to search\""
+        echo "e.g. \`holdkey a \"Terraria: \"\`"
+        echo "Use Ctrl-C to stop"
+        return
+    fi
+    winid=$(xdotool search --name "$2" | head -n1)
+    while true; do
+        xdotool keydown --window $winid "$1"
+    done
 }

@@ -1,3 +1,4 @@
+#!/bin/bash
 alias pi='ssh pi@WalkmanPI.local'
 alias aptupdate='apt update && apt upgrade -y; apt dist-upgrade -y; apt install -y; apt install -f -y; apt check -y; apt autoremove -y; apt autoclean'
 
@@ -11,13 +12,12 @@ alias mctmux='tmux new-session -s FTBBeyond "cd /srv/Minecraft/FTBBeyondServer; 
 alias benlan='tmux new-session -s BenLan "cd /srv/Minecraft/PrivateSurvivalBenLan; bash ServerStart.sh; bash"'
 
 # Android stuff
-alias adb=/home/walkman/bin/platform-tools/adb
+alias         adb=/home/walkman/bin/platform-tools/adb
 alias dmtracedump=/home/walkman/bin/platform-tools/dmtracedump
-alias etc1tool=/home/walkman/bin/platform-tools/etc1tool
-alias fastboot=/home/walkman/bin/platform-tools/fastboot
-alias hprof-conv=/home/walkman/bin/platform-tools/hprof-conv
-alias sqlite3=/home/walkman/bin/platform-tools/sqlite3
+alias   etc1tool]=/home/walkman/bin/platform-tools/etc1tool
+alias   fastboot]=/home/walkman/bin/platform-tools/fastboot
+alias  hprof-conv=/home/walkman/bin/platform-tools/hprof-conv
+alias     sqlite3=/home/walkman/bin/platform-tools/sqlite3
+alias adbreboot='sudo adb kill-server; sudo killall adb 2>/dev/null; sudo /home/walkman/bin/platform-tools/adb start-server'
 alias abe='java -jar "/media/walkman/Buffalo HD-PZU3/Media/Software/Android Apps/android-backup-extractor-20160710-bin/abe.jar"'
-alias helium="bash /home/walkman/bin/helium/run.sh"
-alias adbreboot="sudo adb kill-server; sudo killall adb 2>/dev/null; sudo /home/walkman/bin/platform-tools/adb start-server"
-
+alias helium='bash /home/walkman/bin/helium/run.sh'
