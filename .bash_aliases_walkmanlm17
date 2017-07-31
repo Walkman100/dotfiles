@@ -14,8 +14,8 @@ alias benlan='tmux new-session -s BenLan "cd /srv/Minecraft/PrivateSurvivalBenLa
 # Android stuff
 alias         adb=/home/walkman/bin/platform-tools/adb
 alias dmtracedump=/home/walkman/bin/platform-tools/dmtracedump
-alias   etc1tool]=/home/walkman/bin/platform-tools/etc1tool
-alias   fastboot]=/home/walkman/bin/platform-tools/fastboot
+alias    etc1tool=/home/walkman/bin/platform-tools/etc1tool
+alias    fastboot=/home/walkman/bin/platform-tools/fastboot
 alias  hprof-conv=/home/walkman/bin/platform-tools/hprof-conv
 alias     sqlite3=/home/walkman/bin/platform-tools/sqlite3
 alias adbreboot='sudo adb kill-server; sudo killall adb 2>/dev/null; sudo /home/walkman/bin/platform-tools/adb start-server'

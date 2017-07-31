@@ -70,8 +70,9 @@ function allsum {
 
 # extend "where" functionality, I find myself running "la `where <program>`" too often
 function about {
-    if where $* 1>/dev/null; then
-        la `where $*`
+    # use which instead of where as where gets aliases too, e.g. ls
+    if which $* 1>/dev/null; then
+        la `which $*`
     else
         echo "Command \"$*\" not found!"
     fi
