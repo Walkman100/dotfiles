@@ -1,21 +1,6 @@
 #!/bin/bash
-alias walkmanpc='ssh walkman@192.168.192.2'
-alias pi='ssh pi@192.168.192.5'
-alias mcpc='walkmanpc'
-alias aptupdate='pkg upgrade -y; apt dist-upgrade -y; apt install -y; apt install -f -y; apt autoremove -y; apt autoclean'
+alias     walkmanpc='ssh walkman@192.168.192.2'
+alias                 pi='ssh pi@192.168.192.5'
+alias macbook='ssh RichardCarter@192.168.192.4'
 
-function clipboard {
-    if command -v termux-clipboard-get 1>/dev/null; then
-        if [[ -p /dev/stdin ]] ; then
-            # stdin is a pipe
-            # stdin -> clipboard
-            termux-clipboard-set
-        else
-            # stdin is not a pipe
-            # clipboard -> stdout
-            termux-clipboard-get
-        fi
-    else
-        echo "Remember to install termux-api"
-    fi
-}
+alias sudo='su -c'

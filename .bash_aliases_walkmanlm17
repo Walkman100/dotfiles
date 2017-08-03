@@ -1,5 +1,4 @@
 #!/bin/bash
-alias pi='ssh pi@WalkmanPI.local'
 alias aptupdate='apt update && apt upgrade -y; apt dist-upgrade -y; apt install -y; apt install -f -y; apt check -y; apt autoremove -y; apt autoclean'
 
 alias gitcommit='git commit -S'

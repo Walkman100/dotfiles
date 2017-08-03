@@ -25,6 +25,12 @@ alias delempty='find . -type d -empty -print -delete'
 alias findq='find 2>/dev/null'
 alias hyperget='aria2c -s 999 -j 999 -x 16 -k 1M'
 
+# SSH aliases
+alias mcpc='walkmanpc'
+alias walkmanpc='ssh walkman@WalkmanLM17.local'
+alias pi='ssh pi@WalkmanPi.local'
+alias macbook='ssh RichardCarter@Richards-MacBook.local'
+
 #############
 # Functions #
 #############

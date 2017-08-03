@@ -1,7 +1,7 @@
 #!/bin/bash
-alias walkmanpc='ssh walkman@192.168.192.2'
-alias pi='ssh pi@192.168.192.5'
-alias mcpc='walkmanpc'
+alias     walkmanpc='ssh walkman@192.168.192.2'
+alias                 pi='ssh pi@192.168.192.5'
+alias macbook='ssh RichardCarter@192.168.192.4'
 alias aptupdate='pkg upgrade -y; apt dist-upgrade -y; apt install -y; apt install -f -y; apt autoremove -y; apt autoclean'
 
 function clipboard {

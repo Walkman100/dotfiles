@@ -1,15 +1,5 @@
 #!/bin/bash
-alias walkmanpc='ssh walkman@WalkmanLM17.local'
-alias pi='ssh pi@WalkmanPi.local'
-alias mcpc='walkmanpc'
-
 alias TextEdit='/Applications/TextEdit.app/Contents/MacOS/TextEdit'
-
-# Only this machine doesn't have these
-unalias hyperget
-unalias cb
-unset clipboard
-unset holdkey
 
 # LS doesn't support long options
 unalias ls
