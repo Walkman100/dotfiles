@@ -111,6 +111,11 @@ function holdkey {
         return
     fi
     
+    if command -v xdotool 1>/dev/null; then
+        echo "xdotool not installed!"
+        return
+    fi
+    
     winid=$(xdotool search --name "$2" | head -n1)
     while true; do
         xdotool keydown --window $winid "$1"
@@ -120,17 +125,22 @@ function holdkey {
 ###########################
 # device-specific aliases #
 ###########################
-if [[ $(uname -o) = Android ]]; then
-    . .bash_aliases_android
-else
-    case $HOSTNAME in
-        WalkmanLM17)
-            . .bash_aliases_walkmanlm17
-            ;;
-        WalkmanPI)
-            . .bash_aliases_walkmanpi
-            ;;
-        Richards-MacBook.local)
-            . .bash_aliases_macbook
-    esac
-fi
+case $HOSTNAME in
+    WalkmanLM17)
+        . .bash_aliases_walkmanlm17
+        ;;
+    WalkmanPI)
+        . .bash_aliases_walkmanpi
+        ;;
+    Richards-MacBook.local)
+        . .bash_aliases_macbook
+        ;;
+    localhost)
+        if [[ $(uname -o) = Android ]]; then
+            . .bash_aliases_androidtermux
+        fi
+        ;;
+    sailfish)
+        . .bash_aliases_android
+        ;;
+esac

@@ -8,4 +8,8 @@ alias TextEdit='/Applications/TextEdit.app/Contents/MacOS/TextEdit'
 # Only this machine doesn't have these
 unalias hyperget
 unalias cb
-unalias clipboard
+unset clipboard
+unset holdkey
+
+# LS doesn't support long options
+unalias ls
