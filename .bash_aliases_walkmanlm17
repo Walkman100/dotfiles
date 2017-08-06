@@ -1,5 +1,5 @@
 #!/bin/bash
-alias aptupdate='apt update && apt upgrade -y; apt dist-upgrade -y; apt install -y; apt install -f -y; apt check -y; apt autoremove -y; apt autoclean'
+alias aptupdate='apt-fast update && apt-fast upgrade -y; apt-fast dist-upgrade -y; apt-fast install -y; apt-fast install -f -y; apt-fast check -y; apt-fast autoremove -y; apt-fast autoclean'
 
 alias gitcommit='git commit -S'
 alias chromecast='pulseaudio-dlna'
