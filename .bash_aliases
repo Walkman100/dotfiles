@@ -133,20 +133,20 @@ function holdkey {
 ###########################
 case $HOSTNAME in
     WalkmanLM17)
-        . .bash_aliases_walkmanlm17
+        . ~/.bash_aliases_walkmanlm17
         ;;
     WalkmanPI)
-        . .bash_aliases_walkmanpi
+        . ~/.bash_aliases_walkmanpi
         ;;
     Richards-MacBook.local)
-        . .bash_aliases_macbook
+        . ~/.bash_aliases_macbook
         ;;
     localhost)
         if [[ $(uname -o) = Android ]]; then
-            . .bash_aliases_androidtermux
+            . ~/.bash_aliases_androidtermux
         fi
         ;;
     sailfish)
-        . .bash_aliases_android
+        . ~/.bash_aliases_android
         ;;
 esac
