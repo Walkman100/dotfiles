@@ -110,7 +110,15 @@ function ytget {
     if [[ $(echo "$YTID" | grep -i "?v=") ]]; then
         YTID=${YTID##*=}
     fi
-    wget "https://i.ytimg.com/vi/$YTID/maxresdefault.jpg" -O "${YTID}_maxresdefault.jpg" || wget "https://i.ytimg.com/vi/$YTID/hqdefault.jpg" -O "${YTID}_hqdefault.jpg"
+    if ! wget "https://i.ytimg.com/vi/$YTID/maxresdefault.jpg" -O "${YTID}_maxresdefault.jpg"; then
+        rm "${YTID}_maxresdefault.jpg"
+        if ! wget "https://i.ytimg.com/vi/$YTID/hqdefault.jpg" -O "${YTID}_hqdefault.jpg"; then
+            rm "${YTID}_hqdefault.jpg"
+            if ! wget "https://i.ytimg.com/vi/$YTID/mqdefault.jpg" -O "${YTID}_mqdefault.jpg"; then
+                rm "${YTID}_mqdefault.jpg"
+            fi
+        fi
+    fi
 }
 
 function holdkey {
