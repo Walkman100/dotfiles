@@ -106,7 +106,11 @@ function ytget {
         echo "Usage: ytget YouTubeID"
         return
     fi
-    wget "https://i.ytimg.com/vi/$*/maxresdefault.jpg" -O "$*_maxresdefault.jpg" || wget "https://i.ytimg.com/vi/$*/hqdefault.jpg" -O "$*_hqdefault.jpg"
+    YTID="$*"
+    if [[ $(echo "$YTID" | grep -i "?v=") ]]; then
+        YTID=${YTID##*=}
+    fi
+    wget "https://i.ytimg.com/vi/$YTID/maxresdefault.jpg" -O "${YTID}_maxresdefault.jpg" || wget "https://i.ytimg.com/vi/$YTID/hqdefault.jpg" -O "${YTID}_hqdefault.jpg"
 }
 
 function holdkey {
