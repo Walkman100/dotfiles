@@ -107,9 +107,7 @@ function ytget {
         return
     fi
     YTID="$*"
-    if [[ $(echo "$YTID" | grep -i "?v=") ]]; then
-        YTID=${YTID##*=}
-    fi
+    YTID=${YTID##*=}
     if ! wget "https://i.ytimg.com/vi/$YTID/maxresdefault.jpg" -O "${YTID}_maxresdefault.jpg"; then
         rm "${YTID}_maxresdefault.jpg"
         if ! wget "https://i.ytimg.com/vi/$YTID/hqdefault.jpg" -O "${YTID}_hqdefault.jpg"; then
