@@ -3,6 +3,7 @@ alias aptupdate='apt-fast update && apt-fast upgrade -y; apt-fast dist-upgrade -
 
 alias gitcommit='git commit -S'
 alias chromecast='pulseaudio-dlna'
+alias youtube-dl='python3 `which youtube-dl`'
 
 # Servers
 alias mcsrv='cd /srv/Minecraft/FTBInfinityServer; bash ServerStart.sh'
