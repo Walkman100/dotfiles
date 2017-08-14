@@ -85,7 +85,7 @@ function seqget {
 
 # interact with the clipboard from the command-line. got from StackOverflow somewhere
 function clipboard {
-    if command -v xclip 1>/dev/null; then
+    if where xclip 1>/dev/null; then
         if [[ -p /dev/stdin ]] ; then
             # stdin is a pipe
             # stdin -> clipboard
@@ -127,7 +127,7 @@ function holdkey {
         return
     fi
     
-    if command -v xdotool 1>/dev/null; then
+    if ! where xdotool 1>/dev/null; then
         echo "xdotool not installed!"
         return
     fi
