@@ -2,6 +2,7 @@
 alias apti='sudo apt-get install'
 alias aptupdate='sudo apt-get update && sudo apt-get upgrade -y; sudo apt-get dist-upgrade -y; sudo apt full-upgrade; sudo apt-get install -f; sudo apt-get check; sudo apt-get autoremove -y; sudo apt-get autoclean'
 
+alias youtube-dl='python3 `which youtube-dl` --external-downloader aria2c'
 alias sshchat='ssh Walkman@localhost -p 3000'
 alias cdweb='cd /var/www/walkman'
 alias gitsy='bash /home/pi/.apps/gitsy/gitsy.sh'
