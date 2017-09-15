@@ -8,10 +8,10 @@ alias kdeconnectd='/usr/lib/kde4/libexec/kdeconnectd'
 alias graphicstatus='watch aticonfig --odgc --odgt --pplib-cmd \"get fanspeed 0\"'
 
 # Servers
-alias mcsrv='cd /srv/Minecraft/FTBInfinityServer; bash ServerStart.sh'
-alias mcsrv2='cd /srv/Minecraft/FTBBeyondServer; bash ServerStart.sh'
-alias mctmux='tmux new-session -s FTBBeyond "cd /srv/Minecraft/FTBBeyondServer; bash ServerStart.sh; bash"'
-alias benlan='tmux new-session -s BenLan "cd /srv/Minecraft/PrivateSurvivalBenLan; bash ServerStart.sh; bash"'
+alias tmuxinfinity='tmux new-session -s FTBInfinity "cd /srv/Minecraft/FTBInfinityServer;     bash ServerStart.sh; bash"'
+alias   tmuxbeyond='tmux new-session -s FTBBeyond   "cd /srv/Minecraft/FTBBeyondServer;       bash ServerStart.sh; bash"'
+alias   tmuxbenlan='tmux new-session -s BenLan      "cd /srv/Minecraft/PrivateSurvivalBenLan; bash ServerStart.sh; bash"'
+alias tmuxwalkpack='tmux new-session -s WalkmanPack "cd /srv/Minecraft/WalkmanPack;           bash ServerStart.sh; bash"'
 
 # Android stuff
 alias         adb=/home/walkman/bin/platform-tools/adb

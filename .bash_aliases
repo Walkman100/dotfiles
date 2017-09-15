@@ -158,7 +158,7 @@ case $HOSTNAME in
     WalkmanLM17)
         . ~/.bash_aliases_walkmanlm17
         ;;
-    WalkmanPI)
+    WalkmanPi)
         . ~/.bash_aliases_walkmanpi
         ;;
     Richards-MacBook.local)
