@@ -60,6 +60,19 @@ function allsum {
     cat
 }
 
+# DD-reporting, run dd and check on an interval
+function ddr {
+    dd $* &
+    pid=$!
+    while true; do
+        sleep 10
+        kill -USR1 $pid
+        if [ "$?" == "1" ]; then
+            break
+        fi
+    done
+}
+
 # extend "where" functionality, I find myself running "la `where <program>`" too often
 function about {
     # use which instead of where as where gets aliases too, e.g. ls
