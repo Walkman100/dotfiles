@@ -7,6 +7,9 @@ alias aptupdate='apt update; apt upgrade -y; apt dist-upgrade -y; apt install -y
 
 alias youtube-dl='python3 `which youtube-dl` --external-downloader aria2c'
 
+alias ll='ls -gGFh'
+alias la='ls -gGAh'
+
 function clipboard {
     if command -v termux-clipboard-get 1>/dev/null; then
         if [[ -p /dev/stdin ]] ; then

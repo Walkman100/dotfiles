@@ -7,8 +7,8 @@ alias grep='grep --colour=auto'
 alias ls='ls --color=auto'
 
 # ls aliases
-alias l='ls -CF'
-alias ll='ls -lhF'
+alias  l='ls -CF'
+alias ll='ls -lFh'
 alias la='ls -lAh'
 
 # general system commands
@@ -20,10 +20,12 @@ alias ..='cd ..'
 alias where='command -v'
 
 # small utilities
+alias nano='nano -Eiw'
 alias myip='curl http://ipecho.net/plain; echo'
 alias delempty='find . -type d -empty -print -delete'
 alias findq='find 2>/dev/null'
 alias hyperget='aria2c -s 999 -j 999 -x 16 -k 1M'
+alias vlcplay='cvlc --play-and-exit'
 
 # SSH aliases
 alias mcpc='walkmanpc'
