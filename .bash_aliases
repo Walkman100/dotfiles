@@ -18,6 +18,7 @@ alias d='exit; logout'
 alias cd..='cd ..'
 alias ..='cd ..'
 alias where='command -v'
+alias gitcommit='git commit -S'
 
 # small utilities
 alias nano='nano -Eiw'
