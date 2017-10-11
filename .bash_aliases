@@ -1,5 +1,5 @@
 #!/bin/bash
-. .selected_editor
+. ~/.selected_editor
 
 # add colours to commands
 alias egrep='egrep --colour=auto'
