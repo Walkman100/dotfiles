@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 alias aptupdate='apt-fast update && apt-fast upgrade -y; apt-fast dist-upgrade -y; apt-fast install -y; apt-fast install -f -y; apt-fast check -y; apt-fast autoremove -y; apt-fast autoclean'
 
 alias youtube-dl='python3 `which youtube-dl` --external-downloader aria2c'

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 alias apti='sudo apt-get install'
 alias aptupdate='sudo apt-get update && sudo apt-get upgrade -y; sudo apt-get dist-upgrade -y; sudo apt full-upgrade; sudo apt-get install -f; sudo apt-get check; sudo apt-get autoremove -y; sudo apt-get autoclean'
 

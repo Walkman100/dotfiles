@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 alias TextEdit='/Applications/TextEdit.app/Contents/MacOS/TextEdit'
 
 # LS doesn't support long options
