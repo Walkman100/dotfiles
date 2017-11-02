@@ -3,6 +3,7 @@ alias     walkmanpc='ssh walkman@192.168.192.2'
 alias                 pi='ssh pi@192.168.192.5'
 alias macbook='ssh RichardCarter@192.168.192.4'
 
+alias sudo='/su/bin/su -c "LD_LIBRARY_PATH=$LD_LIBRARY_PATH HOME=$HOME"'
 alias aptupdate='apt update; apt upgrade -y; apt dist-upgrade -y; apt install -y; apt install -f -y; apt autoremove -y; apt autoclean'
 
 alias youtube-dl='python3 `which youtube-dl` --external-downloader aria2c'

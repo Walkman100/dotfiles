@@ -159,7 +159,7 @@ function holdkey {
 # device-specific aliases #
 ###########################
 case $HOSTNAME in
-    WalkmanLM17)
+    WalkmanLM17|WalkmanPC)
         . ~/.bash_aliases_walkmanlm17
         ;;
     WalkmanPi)
