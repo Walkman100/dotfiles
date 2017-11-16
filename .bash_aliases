@@ -31,15 +31,44 @@ alias vlcplay='cvlc --play-and-exit'
 alias youtube-dl='python3 `which youtube-dl` --external-downloader aria2c'
 alias ytdlm='youtube-dl -x --audio-format mp3 --embed-thumbnail'
 
-# SSH aliases
-alias mcpc='walkmanpc'
-alias walkmanpc='ssh walkman@WalkmanLM17.local'
-alias pi='ssh pi@WalkmanPi.local'
-alias macbook='ssh RichardCarter@Richards-MacBook.local'
-
 #############
 # Functions #
 #############
+
+# SSH functions
+alias mcpc='walkmanpc'
+function walkmanpc {
+    ssh walkman@WalkmanLM17.local
+    if [ "$?" == "255" ]; then
+        ssh walkman@10.0.0.122
+        if [ "$?" == "255" ]; then
+            ssh walkman@192.168.192.2
+            if [ "$?" == "255" ]; then
+                ssh walkman@192.168.192.8
+            fi
+        fi
+    fi
+}
+
+function pi {
+    ssh pi@WalkmanPi.local
+    if [ "$?" == "255" ]; then
+        ssh pi@10.0.0.125
+        if [ "$?" == "255" ]; then
+            ssh pi@192.168.192.5
+        fi
+    fi
+}
+
+function macbook {
+    ssh RichardCarter@Richards-MacBook.local
+    if [ "$?" == "255" ]; then
+        ssh RichardCarter@10.0.0.124
+        if [ "$?" == "255" ]; then
+            ssh RichardCarter@192.168.192.4
+        fi
+    fi
+}
 
 # for checksumming multiple files at once
 function md5sum2 {
