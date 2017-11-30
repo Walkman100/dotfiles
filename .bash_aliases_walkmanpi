@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 alias apti='sudo apt-get install'
-alias aptupdate='sudo apt-get update && sudo apt-get upgrade -y; sudo apt-get dist-upgrade -y; sudo apt full-upgrade; sudo apt-get install -f; sudo apt-get check; sudo apt-get autoremove -y; sudo apt-get autoclean'
+alias aptupdate='apt-fast update && apt-fast upgrade -y; apt-fast dist-upgrade -y; apt-fast install -y; apt-fast install -f -y; apt-fast check; apt-fast autoremove -y; apt-fast autoclean'
 
 alias sshchat='ssh Walkman@localhost -p 3000'
 alias cdweb='cd /var/www/walkman'
