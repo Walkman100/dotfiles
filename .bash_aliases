@@ -97,7 +97,7 @@ function allsum {
 
 # DD-reporting, run dd and check on an interval
 function ddr {
-    dd $* &
+    dd "$@" &
     pid=$!
     while true; do
         sleep 10
