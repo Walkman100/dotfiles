@@ -97,11 +97,12 @@ function allsum {
 
 # DD-reporting, run dd and check on an interval
 function ddr {
-    dd "$@" &
+    sudo echo "caching password for sudo" > /dev/null
+    sudo dd "$@" &
     pid=$!
     while true; do
         sleep 10
-        kill -USR1 $pid
+        sudo kill -USR1 $pid
         if [ "$?" == "1" ]; then
             break
         fi
