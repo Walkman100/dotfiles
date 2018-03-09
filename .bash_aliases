@@ -38,13 +38,16 @@ alias ytdlm='youtube-dl -x --audio-format mp3 --embed-thumbnail'
 # SSH functions
 alias mcpc='walkmanpc'
 function walkmanpc {
-    ssh walkman@WalkmanLM17.local
+    ssh walkman@WalkmanPC.local
     if [ "$?" == "255" ]; then
-        ssh walkman@10.0.0.122
+        ssh walkman@WalkmanLM17.local
         if [ "$?" == "255" ]; then
-            ssh walkman@192.168.192.2
+            ssh walkman@10.0.0.122
             if [ "$?" == "255" ]; then
                 ssh walkman@192.168.192.8
+                if [ "$?" == "255" ]; then
+                    ssh walkman@192.168.192.2
+                fi
             fi
         fi
     fi
