@@ -197,6 +197,7 @@ case $HOSTNAME in
     WalkmanPC)
         . ~/.bash_aliases_walkmanlm17
         . ~/.bash_aliases_walkmanpc
+        ;;
     WalkmanPi)
         . ~/.bash_aliases_walkmanpi
         ;;
