@@ -1,0 +1,41 @@
+#!/usr/bin/env bash
+
+# Windows-WSL interop
+alias exphere='/mnt/c/Windows/System32/cmd.exe /c explorer %cd%'
+alias sudocmd='/mnt/c/Windows/System32/cmd.exe /c sudo cmd.exe /k cd /d %cd%'
+alias msbuild.exe='/mnt/c/Windows/Microsoft.NET/Framework64/v4.0.30319/MSBuild.exe'
+alias win-open='/mnt/c/ProgramFiles/WalkmanOSS/ProgramLauncher.exe'
+
+function cmdecho {
+    tmp=`/mnt/c/Windows/System32/cmd.exe /c echo $@`
+    echo $tmp | tr -d '\r'
+}
+alias winpwd='cmdecho %cd%'
+
+function getwinpath {
+    cd "$@"
+    winpwd
+}
+
+function sudowin {
+    /mnt/c/Windows/System32/cmd.exe /c sudo ""$@""
+}
+
+alias symlinkwin='mklink'
+function mklink {
+    sudowin /mnt/c/Windows/System32/cmd.exe /c mklink "$2" "`getwinpath "$1"`"
+}
+
+function junction {
+    /mnt/c/Windows/System32/cmd.exe /c mklink /J "$2" `getwinpath "$1"`
+}
+
+function autosymlink {
+    for i in "$@"; do
+        LINKTARGET=$(cat "$i")
+        LINKFILE="$i"
+        rm "$LINKFILE"
+        ln -s "$LINKTARGET" "$LINKFILE"
+    done
+}
+
