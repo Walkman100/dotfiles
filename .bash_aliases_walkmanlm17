@@ -21,3 +21,17 @@ alias     sqlite3=/home/walkman/bin/platform-tools/sqlite3
 alias adbreboot='sudo adb kill-server; sudo killall adb 2>/dev/null; sudo /home/walkman/bin/platform-tools/adb start-server'
 alias abe='java -jar "/media/walkman/Buffalo HD-PZU3/Media/Software/Android Apps/android-backup-extractor-20160710-bin/abe.jar"'
 alias helium='bash /home/walkman/bin/helium/run.sh'
+
+function engage-tor {
+    sudo service polipo start
+    sudo mv /etc/apt/apt.conf.d/00proxy.disabled /etc/apt/apt.conf.d/00proxy
+    export  http_proxy="127.0.0.1:8123"
+    export https_proxy="127.0.0.1:8123"
+    export socks_proxy="127.0.0.1:9150"
+}
+
+function disengage-tor {
+    sudo service polipo stop
+    sudo mv /etc/apt/apt.conf.d/00proxy /etc/apt/apt.conf.d/00proxy.disabled
+    unset http_proxy https_proxy socks_proxy
+}
