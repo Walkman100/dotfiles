@@ -22,7 +22,7 @@ alias where='command -v'
 alias gitcommit='git commit -S'
 
 # small utilities
-alias nano='nano -Eiw'
+alias nano='nano -AEPiw -T 4'
 alias myip='curl http://ipecho.net/plain; echo'
 alias delempty='find . -type d -empty -print -delete'
 alias findq='find 2>/dev/null'
