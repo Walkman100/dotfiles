@@ -5,6 +5,7 @@ alias exphere='/mnt/c/Windows/System32/cmd.exe /c explorer %cd%'
 alias sudocmd='/mnt/c/Windows/System32/cmd.exe /c sudo cmd.exe /k cd /d %cd%'
 alias msbuild.exe='/mnt/c/Windows/Microsoft.NET/Framework64/v4.0.30319/MSBuild.exe'
 alias win-open='/mnt/c/ProgramFiles/WalkmanOSS/ProgramLauncher.exe'
+alias winopen='win-open'
 
 function cmdecho {
     tmp=`/mnt/c/Windows/System32/cmd.exe /c echo $@`

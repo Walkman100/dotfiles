@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+
 . ~/.selected_editor
 
 # add colours to commands

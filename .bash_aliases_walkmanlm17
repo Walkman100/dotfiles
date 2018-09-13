@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 alias aptupdate='apt-fast update && apt-fast upgrade -y; apt-fast dist-upgrade -y; apt-fast install -y; apt-fast install -f -y; apt-fast check -y; apt-fast autoremove -y; apt-fast autoclean'
 
+alias cdweb='cd /var/www/html'
 alias chromecast='pulseaudio-dlna -p 8090'
 alias kdeconnectd='/usr/lib/kde4/libexec/kdeconnectd'
 alias graphicstatus='watch aticonfig --odgc --odgt --pplib-cmd \"get fanspeed 0\"'
