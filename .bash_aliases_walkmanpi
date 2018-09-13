@@ -4,5 +4,6 @@ alias aptupdate='apt-fast update && apt-fast upgrade -y; apt-fast dist-upgrade -
 
 alias sshchat='ssh Walkman@localhost -p 3000'
 alias cdweb='cd /var/www/walkman'
+alias nano='nano -AEiw -T 4' # pi's nano doesn't have -P option
 alias gitsy='bash /home/pi/.apps/gitsy/gitsy.sh'
 alias pioff='sudo shutdown -HP now'

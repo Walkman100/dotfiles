@@ -3,3 +3,15 @@ alias TextEdit='/Applications/TextEdit.app/Contents/MacOS/TextEdit'
 
 # LS doesn't support long options
 unalias ls
+
+# OSX's nano doesn't support -P
+alias nano='nano -AEiw -T 4'
+
+# re-define about because la behaves differently (no --color=auto)
+function about {
+    if which $* 1>/dev/null; then
+        la `which $*`
+    else
+        echo "Command \"$*\" not found!"
+    fi
+}
