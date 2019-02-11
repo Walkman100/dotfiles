@@ -36,6 +36,12 @@ alias ytdlm='youtube-dl -x --audio-format mp3 --embed-thumbnail'
 # Functions #
 #############
 
+# make a directory and cd into it
+function mkcd {
+    mkdir $*
+    cd $*
+}
+
 # SSH functions
 alias mcpc='walkmanpc'
 function walkmanpc {
