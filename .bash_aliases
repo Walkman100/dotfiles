@@ -31,6 +31,7 @@ alias hyperget='aria2c -s 999 -j 999 -x 16 -k 1M'
 alias vlcplay='cvlc --play-and-exit'
 alias youtube-dl='python3 `which youtube-dl` --external-downloader aria2c --external-downloader-args "-s 999 -j 999 -x 16 -k 1M" -i'
 alias ytdlm='youtube-dl -x --audio-format mp3 --embed-thumbnail'
+alias gcca='gcc -Wall -Wextra -Werror'
 
 #############
 # Functions #
