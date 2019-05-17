@@ -20,3 +20,14 @@ function clipboard {
         echo "Remember to install termux-api"
     fi
 }
+
+function walkmanpc {
+    if [ -z "$(ifconfig wlan0 | grep 10.0.0.131)" ]; then
+        ssh walkman@192.168.192.8
+        if [ "$?" == "255" ]; then
+            ssh walkman@192.168.192.2
+        fi
+    else
+        ssh walkman@10.0.0.122
+    fi
+}
