@@ -15,3 +15,47 @@ function about {
         echo "Command \"$*\" not found!"
     fi
 }
+
+# aliases and functions
+alias kinitfr='kinit mcarter@42.FR'
+alias norm='norminette -R CheckForbiddenSourceHeader'
+alias moul='norm'
+alias pol='~/Applications/PlayOnMac.app/Contents/MacOS/playonmac'
+
+function gitclone {
+	if [ -z "$(klist 2>&1 | grep 'mcarter@42.FR')" ]; then
+		kdestroy 2>/dev/null
+		until kinitfr; do
+			echo "Retrying..."
+		done
+	fi
+	git clone --recursive $1 $2 $3 $4 $5 $6 $7 $8 $9
+	if [ -z "$2" ]; then
+		cd "${1##*/}"
+	else
+		cd "$2"
+	fi
+}
+
+function gitpush {
+	if [ -z "$(klist 2>&1 | grep 'mcarter@42.FR')" ]; then
+		kdestroy 2>/dev/null
+		until kinitfr; do
+			echo "Retrying..."
+		done
+	fi
+	git push
+}
+
+function gitadd {
+	git add $*
+	git commit -m "Added $*"
+}
+
+function pi {
+    ssh -J serveo.net pi@walkman
+}
+
+function walkmanpc {
+    ssh -J serveo.net,pi@walkman walkman@10.0.0.122
+}
