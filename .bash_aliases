@@ -223,4 +223,7 @@ case $HOSTNAME in
     sailfish)
         . ~/.bash_aliases_android
         ;;
+    *.wethinkcode.co.za)
+        . ~/.bash_aliases_wtc
+        ;;
 esac
