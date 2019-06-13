@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
 alias TextEdit='/Applications/TextEdit.app/Contents/MacOS/TextEdit'
 
-# LS doesn't support long options
-unalias ls
+# LS uses different argument for colour
+alias ls='ls -G'
 
 # OSX's nano doesn't support -P
 alias nano='nano -AEiw -T 4'
 
-# re-define about because la behaves differently (no --color=auto)
+# re-define about because la behaves differently
 function about {
     if which $* 1>/dev/null; then
         la `which $*`

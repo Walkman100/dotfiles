@@ -39,8 +39,8 @@ alias gcca='gcc -Wall -Wextra -Werror'
 
 # make a directory and cd into it
 function mkcd {
-    mkdir $*
-    cd $*
+    mkdir "$*"
+    cd "$*"
 }
 
 # SSH functions
