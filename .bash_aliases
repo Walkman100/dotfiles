@@ -6,7 +6,7 @@
 alias egrep='egrep --colour=auto'
 alias fgrep='fgrep --colour=auto'
 alias grep='grep --colour=auto'
-alias ls='ls --color=auto'
+alias ls='ls --color=auto --group-directories-first'
 
 # ls aliases
 alias  l='ls -CF'
