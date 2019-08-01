@@ -212,7 +212,7 @@ case $HOSTNAME in
     WalkmanPi)
         . ~/.bash_aliases_walkmanpi
         ;;
-    Richards-MacBook.local)
+    Richards-MacBook.local|Walkmans-iMac.local)
         . ~/.bash_aliases_macbook
         ;;
     localhost)
