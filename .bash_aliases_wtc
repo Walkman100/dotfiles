@@ -17,15 +17,15 @@ function about {
 }
 
 # aliases and functions
-alias kinitfr='kinit mcarter@42.FR'
+alias kinitfull='kinit mcarter@WETHINKCODE.CO.ZA'
 alias norm='norminette -R CheckForbiddenSourceHeader'
 alias moul='norm'
 alias pol='~/Applications/PlayOnMac.app/Contents/MacOS/playonmac'
 
 function gitclone {
-	if [ -z "$(klist 2>&1 | grep 'mcarter@42.FR')" ]; then
+	if [ -z "$(klist 2>&1 | grep 'mcarter@WETHINKCODE.CO.ZA')" ]; then
 		kdestroy 2>/dev/null
-		until kinitfr; do
+		until kinitfull; do
 			echo "Retrying..."
 		done
 	fi
@@ -38,9 +38,9 @@ function gitclone {
 }
 
 function gitpush {
-	if [ -z "$(klist 2>&1 | grep 'mcarter@42.FR')" ]; then
+	if [ -z "$(klist 2>&1 | grep 'mcarter@WETHINKCODE.CO.ZA')" ]; then
 		kdestroy 2>/dev/null
-		until kinitfr; do
+		until kinitfull; do
 			echo "Retrying..."
 		done
 	fi
