@@ -18,9 +18,10 @@ function about {
 
 # aliases and functions
 alias kinitfull='kinit mcarter@WETHINKCODE.CO.ZA'
-alias norm='norminette -R CheckForbiddenSourceHeader'
+function norm {
+	norminette "$@" 2>/dev/null
+}
 alias moul='norm'
-alias pol='~/Applications/PlayOnMac.app/Contents/MacOS/playonmac'
 
 function gitclone {
 	if [ -z "$(klist 2>&1 | grep 'mcarter@WETHINKCODE.CO.ZA')" ]; then
