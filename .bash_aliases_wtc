@@ -16,6 +16,16 @@ function about {
     fi
 }
 
+function alert {
+	if [ -z "$*" ]; then
+		osascript -e "display notification \"Alert in $PWD\" with title \"Terminal\""
+	elif [ -z "$2" ]; then
+		osascript -e "display notification \"$1\" with title \"Terminal\""
+	else
+		osascript -e "display notification \"$1\" with title \"$2\""
+	fi
+}
+
 # aliases and functions
 alias kinitfull='kinit mcarter@WETHINKCODE.CO.ZA'
 function norm {
