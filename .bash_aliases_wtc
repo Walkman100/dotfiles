@@ -7,6 +7,22 @@ alias ls='ls -G'
 # OSX's nano doesn't support -P
 alias nano='nano -AEiw -T 4'
 
+# force-remove function
+function rmf {
+	rm -rf "$@" 2>/dev/null
+	if [ "$?" != "0" ]; then
+		echo "Normal rm -f failed, removing user immutable flag..."
+		chflags -R nouchg "$@"
+		rm -rf "$@" 2>/dev/null
+		if [ "$?" != "0" ]; then
+			echo "Removing user immutable flag didn't help, removing ACLs..."
+			chmod -RN "$@"
+			rm -rf "$@"
+		fi
+	fi
+	echo "Done."
+}
+
 # re-define about because la behaves differently
 function about {
     if which $* 1>/dev/null; then
