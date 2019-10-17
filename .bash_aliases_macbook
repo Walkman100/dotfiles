@@ -4,6 +4,9 @@ alias TextEdit='/Applications/TextEdit.app/Contents/MacOS/TextEdit'
 # LS uses different argument for colour
 alias ls='ls -G'
 
+# Add show absolutely all info
+alias laa='la -@Oe'
+
 # OSX's nano doesn't support -P
 alias nano='nano -AEiw -T 4'
 
