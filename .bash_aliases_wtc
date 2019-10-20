@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 alias TextEdit='/Applications/TextEdit.app/Contents/MacOS/TextEdit'
+alias vlc='/Applications/VLC.app/Contents/MacOS/VLC'
+alias cvlc='/Applications/VLC.app/Contents/MacOS/VLC -I dummy'
 
 # LS uses different argument for colour
 alias ls='ls -G'
