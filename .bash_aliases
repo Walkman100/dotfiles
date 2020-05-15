@@ -123,8 +123,8 @@ function ddr {
 # extend "where" functionality, I find myself running "la `where <program>`" too often
 function about {
     # use which instead of where as where gets aliases too, e.g. ls
-    if which $* 1>/dev/null; then
-        la `which $*`
+    if which "$*" 1>/dev/null; then
+        la "`which "$*"`"
     else
         echo "Command \"$*\" not found!"
     fi
@@ -205,7 +205,7 @@ case $HOSTNAME in
     WalkmanLM17)
         . ~/.bash_aliases_walkmanlm17
         ;;
-    WalkmanPC)
+    WalkmanPC|Matthew-PC)
         . ~/.bash_aliases_walkmanlm17
         . ~/.bash_aliases_walkmanpc
         ;;
