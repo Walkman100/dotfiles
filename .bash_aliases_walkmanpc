@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+alias aptupdate='apt-fast update && apt list --upgradable && apt-fast upgrade -y; apt-fast dist-upgrade -y; apt-fast install -y; apt-fast install -f -y; apt-fast check -y; apt-fast autoremove -y; apt-fast autoclean'
 
 # Windows-WSL interop
 alias exphere='/mnt/c/Windows/System32/cmd.exe /c explorer %cd%'
