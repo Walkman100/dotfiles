@@ -2,8 +2,8 @@
 alias aptupdate='apt-fast update && apt list --upgradable && apt-fast upgrade -y; apt-fast dist-upgrade -y; apt-fast install -y; apt-fast install -f -y; apt-fast check -y; apt-fast autoremove -y; apt-fast autoclean'
 
 # Windows-WSL interop
-alias exphere='/mnt/c/Windows/System32/cmd.exe /c explorer %cd%'
-alias sudocmd='/mnt/c/Windows/System32/cmd.exe /c sudo cmd.exe /k cd /d %cd%'
+alias exphere='/mnt/c/Windows/System32/cmd.exe /c explorer "%cd%"'
+alias sudocmd='/mnt/c/Windows/System32/cmd.exe /c "C:\ProgramFiles\WalkmanOSS\WalkmanUtils\RunAsAdmin.exe" -q cmd.exe /k cd /d "%cd%"'
 alias msbuild.exe='/mnt/c/Windows/Microsoft.NET/Framework64/v4.0.30319/MSBuild.exe'
 alias win-open='/mnt/c/ProgramFiles/WalkmanOSS/ProgramLauncher.exe'
 alias winopen='win-open'
@@ -13,12 +13,12 @@ function cmdecho {
     echo $tmp | tr -d '\r'
 }
 alias winpwd='cmdecho %cd%'
-function getwinpath { cd "$@" && winpwd; }
+function getwinpath { pushd "$@" && winpwd; popd; }
 
-function sudowin { /mnt/c/Windows/System32/cmd.exe /c sudo ""$@""; }
+function sudowin { /mnt/c/ProgramFiles/WalkmanOSS/WalkmanUtils/RunAsAdmin.exe ""$@""; }
 
 alias symlinkwin='mklink'
-function mklink { sudowin /mnt/c/Windows/System32/cmd.exe /c mklink "$2" "`getwinpath "$1"`"; }
+function mklink { sudowin "C:\\Windows\\System32\\cmd.exe" /c mklink "$2" "`getwinpath "$1"`"; }
 
 function junction { /mnt/c/Windows/System32/cmd.exe /c mklink /J "$2" `getwinpath "$1"`; }
 
