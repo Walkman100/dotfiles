@@ -30,7 +30,7 @@ alias findq='find 2>/dev/null'
 alias vlcplay='cvlc --play-and-exit'
 alias hyperget='aria2c -s 999 -j 999 -x 16 -k 1M --console-log-level warn'
 alias youtube-dl='python3 `which youtube-dl` --external-downloader aria2c --external-downloader-args "-s 999 -j 999 -x 16 -k 1M --console-log-level error" -i'
-alias ytdlm='youtube-dl -x --audio-format mp3 --embed-thumbnail'
+alias ytdlm='yt-dlp -x --audio-format mp3 --embed-thumbnail'
 alias gcca='gcc -Wall -Wextra -Werror'
 
 #############
@@ -52,7 +52,7 @@ function walkmanpc {
         if [ "$?" == "255" ]; then
             ssh walkman@10.0.0.122
             if [ "$?" == "255" ]; then
-                ssh walkman@192.168.192.8
+                ssh walkman@192.168.192.6
                 if [ "$?" == "255" ]; then
                     ssh walkman@192.168.192.2
                 fi
@@ -76,7 +76,7 @@ function macbook {
     if [ "$?" == "255" ]; then
         ssh RichardCarter@10.0.0.124
         if [ "$?" == "255" ]; then
-            ssh RichardCarter@192.168.192.4
+            ssh RichardCarter@192.168.192.10
         fi
     fi
 }
