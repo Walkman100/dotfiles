@@ -71,12 +71,12 @@ function pi {
     fi
 }
 
-function macbook {
-    ssh RichardCarter@Richards-MacBook.local
+function nas {
+    ssh Walkman@SynologyNAS.local
     if [ "$?" == "255" ]; then
-        ssh RichardCarter@10.0.0.124
+        ssh Walkman@10.0.0.110
         if [ "$?" == "255" ]; then
-            ssh RichardCarter@192.168.192.10
+            ssh Walkman@192.168.192.10
         fi
     fi
 }
