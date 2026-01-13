@@ -47,18 +47,18 @@ function mkcd {
 alias mcpc='walkmanpc'
 function walkmanpc {
     ssh walkman@WalkmanPC.local
-    if [ "$?" == "255" ]; then
-        ssh walkman@WalkmanLM17.local
-        if [ "$?" == "255" ]; then
-            ssh walkman@10.0.0.122
-            if [ "$?" == "255" ]; then
-                ssh walkman@192.168.192.6
-                if [ "$?" == "255" ]; then
-                    ssh walkman@192.168.192.2
-                fi
-            fi
-        fi
-    fi
+    if [ "$?" != "255" ]; then return; fi
+    ssh walkman@WalkmanLM17.local
+    if [ "$?" != "255" ]; then return; fi
+    ssh walkman@10.0.0.122
+    if [ "$?" != "255" ]; then return; fi
+    ssh walkman@192.168.192.6
+    if [ "$?" != "255" ]; then return; fi
+    ssh walkman@192.168.192.2
+    if [ "$?" != "255" ]; then return; fi
+    ssh 10.0.0.122 -p 30
+    if [ "$?" != "255" ]; then return; fi
+    ssh 192.168.192.6 -p 30
 }
 
 function pi {
