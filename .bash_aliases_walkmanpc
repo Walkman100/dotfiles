@@ -12,7 +12,7 @@ alias aptupdate='apt-fast update &&
  sudo deno upgrade && sudo deno upgrade'
 
 # Windows-WSL interop
-alias exphere='/mnt/c/Windows/System32/cmd.exe /c explorer "%cd%"'
+alias exphere='/mnt/c/Windows/explorer.exe .'
 alias sudocmd='/mnt/c/Windows/System32/cmd.exe /c "C:\ProgramFiles\WalkmanOSS\WalkmanUtils\RunAsAdmin.exe" -q cmd.exe /k cd /d "%cd%"'
 alias msbuild.exe='/mnt/c/Windows/Microsoft.NET/Framework64/v4.0.30319/MSBuild.exe'
 alias win-open='/mnt/c/ProgramFiles/WalkmanOSS/ProgramLauncher.exe'

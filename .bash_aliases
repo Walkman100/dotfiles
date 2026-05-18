@@ -24,7 +24,7 @@ alias gitcommit='git commit -S'
 
 # small utilities
 alias nano='nano -AEPiw -T 4'
-alias myip='curl http://ipecho.net/plain; echo'
+alias myip='until curl --connect-timeout 10 --max-time 10 http://ipecho.net/plain && echo && date -R; do sleep 1; done'
 alias delempty='find . -type d -empty -print -delete'
 alias findq='find 2>/dev/null'
 alias vlcplay='cvlc --play-and-exit'
@@ -186,12 +186,12 @@ function holdkey {
         echo "Use Ctrl-C to stop"
         return
     fi
-    
+
     if ! where xdotool 1>/dev/null; then
         echo "xdotool not installed!"
         return
     fi
-    
+
     winid=$(xdotool search --name "$2" | head -n1)
     while true; do
         xdotool keydown --window $winid "$1"
