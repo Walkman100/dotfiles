@@ -30,6 +30,7 @@ alias findq='find 2>/dev/null'
 alias vlcplay='cvlc --play-and-exit'
 alias hyperget='aria2c -s 999 -j 999 -x 16 -k 1M --console-log-level warn'
 alias youtube-dl='python3 `which youtube-dl` --external-downloader aria2c --external-downloader-args "-s 999 -j 999 -x 16 -k 1M --console-log-level error" -i'
+alias yt-dlp='python3 `which yt-dlp` --downloader aria2c --downloader-args aria2c:"-s 999 -j 999 -x 16 -k 1M --console-log-level error" -i'
 alias ytdlm='yt-dlp -x --audio-format mp3 --embed-thumbnail'
 alias gcca='gcc -Wall -Wextra -Werror'
 
