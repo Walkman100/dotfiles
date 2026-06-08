@@ -40,4 +40,3 @@ function autosymlink {
         ln -s "$LINKTARGET" "$LINKFILE"
     done
 }
-
