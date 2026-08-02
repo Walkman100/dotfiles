@@ -26,6 +26,7 @@ alias gitcommit='git commit -S'
 alias nano='nano -AEPiw -T 4'
 alias myip='until curl --connect-timeout 10 --max-time 10 http://ipecho.net/plain && echo && date -R; do sleep 1; done'
 alias delempty='find . -type d -empty -print -delete'
+alias hldupes='rdfind -makeresultsfile false -makehardlinks true'
 alias findq='find 2>/dev/null'
 alias vlcplay='cvlc --play-and-exit'
 alias hyperget='aria2c -s 999 -j 999 -x 16 -k 1M -R --console-log-level warn'
@@ -140,7 +141,7 @@ function seqget {
 
     for i in `seq $2 $3`; do
         tmpURL=$1
-        wget -nv "${tmpURL//%%/$i}"
+        wget -nc -nv "${tmpURL//%%/$i}"
     done
 }
 
